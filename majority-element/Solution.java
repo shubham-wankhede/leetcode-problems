@@ -20,7 +20,5 @@ class Solution {
       Arrays.sort(nums);
       return nums[nums.length-1/2];
     }
-
-
 }
 
