@@ -1,6 +1,6 @@
 //https://github.com/shubham-wankhede/leetcode-problems.git
 
-class TwoSums {
+class Solution {
     public int[] twoSum(int[] nums, int target) {
         int length = nums.length;
         HashMap<Integer, Integer> lookup = new HashMap<>();

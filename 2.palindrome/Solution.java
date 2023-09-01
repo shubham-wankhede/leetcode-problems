@@ -1,21 +1,18 @@
-class Palindrome_Approach1 {
+class Solution_Approach1 {
     public boolean isPalindrome(int x) {
-       String originalX = String.valueOf(x);
+        if(x<0)
+            return false;
 
-       String[] splittedX = originalX.split("");
-       StringBuilder reversed = new StringBuilder("");
-       for(int i=splittedX.length-1; i>=0; i--){
-           reversed.append(splittedX[i]);
-       }
+        String numString = String.valueOf(x);
+        for( int p1 =0, p2=numString.length()-1 ; p1<p2; p1++,p2--){
+            if(numString.charAt(p1)!=numString.charAt(p2))
+                return false;            
+        }
+        return true;
+    }   
+ }
 
-       String reversedString = new String(reversed);
-
-       return originalX.equals(reversedString) ? true : false;
-    }
-}
-
-
-class Palindrome_Approach2{
+class Solution_Approach2{
     public boolean isPalindrome(int x) {
         if( x < 0 )
             return false;
