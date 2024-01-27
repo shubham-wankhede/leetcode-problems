@@ -77,4 +77,27 @@ class Solution {
 		return maxLength;
 	}
 
+	//using hashset
+        public static int lengthOfLongestSubstring(String s) {
+		int length = s.length();
+                int maxLength = 0;
+                int left = 0;
+
+                Set<Character> set = new HashSet<>();
+
+                for(int right = 0; right < length; right++){
+                    char ch = s.charAt(right);
+                    if(!set.contains(ch)){
+                      set.add(ch);
+                      maxLength = Math.max(maxLength, right-left+1);
+                    }else{
+                       while(set.contains(ch)){
+                         set.remove(s.charAt(left));
+                        left++;
+                    }
+                    set.add(ch);
+                }
+        }
+        return maxLength;
+	}
 }
