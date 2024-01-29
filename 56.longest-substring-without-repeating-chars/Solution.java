@@ -54,6 +54,27 @@ class Solution {
 		}
 		return max;
 	}
+  //using HashMap
+    public static int lengthOfLongestSubstring2(String s) {
+		int length = s.length();
+		int left = 0;
+		int right = 0;
+		int maxLength = 0;
 
+		Map<Character,Integer> map = new HashMap<>();
+
+		while(right < length){
+			char ch = s.charAt(right);
+			if(!map.containsKey(ch) || map.get(ch) < left){
+				map.put(ch,right);
+				maxLength = Math.max(maxLength,right-left+1);
+			}else{
+				left = map.get(ch)+1;
+				map.put(ch,right);
+			}
+			right++;
+		}
+		return maxLength;
+	}
 
 }
